@@ -19,7 +19,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <motion.section 
+    <motion.section id='hero'
       className={styles.hero}
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
