@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
+  height: 115px;
   background: rgba(11, 17, 32, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--accent);
@@ -15,7 +15,7 @@
 }
 
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary);
 }
@@ -35,6 +35,7 @@
 .nav a {
   color: var(--light);
   text-decoration: none;
+  font-size: large;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
@@ -59,3 +60,141 @@
   width: 100%;
 }
 
+
+/* Esconde menu Desktop em telas pequenas */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+}
+
+/* Links */
+.link {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--tertiary);
+  transition: width 0.3s ease;
+}
+
+.link:hover {
+  color: var(--tertiary);
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Hamburger */
+.menuHam {
+  display: none;
+  width: 20px;
+  height: 16px;
+  position: relative;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 60;
+}
+
+@media (max-width: 768px) {
+  .menuHam {
+    display: block;
+  }
+}
+
+/* Hamburger lines */
+.menuHam span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: var(--light);
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.4s ease;
+}
+
+.menuHam span:nth-child(1) {
+  top: 0;
+}
+
+.menuHam span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.menuHam span:nth-child(3) {
+  bottom: 0;
+}
+
+/* Hamburger active (transforma em X) */
+.menuHam.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.menuHam.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menuHam.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 50%;
+}
+
+/* Menu mobile */
+.menuMobile {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 60%;
+  max-width: 300px;
+  height: 100vh;
+  background-color: var(--primary);
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: right 0.4s ease;
+  box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+  z-index: 55;
+}
+
+.menuMobileOpen {
+  right: 0;
+}
+
+.menuMobile .link {
+  font-size: 1.2rem;
+}
+
+/* Responsividade */
+
+@media (max-width: 400px) {
+  .menuMobile {
+    width: 80%;
+  }
+
+  .menuMobile .link {
+    font-size: 1.2rem;
+  }
+
+  .header {
+    padding: 1.5rem 2rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+} 

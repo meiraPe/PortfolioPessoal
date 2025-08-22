@@ -1,7 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion";
+import { useState } from "react"
 import styles from "./Header.module.css";
+import Link from "next/link";
 
 export default function Header() {
   const links = [
@@ -10,6 +12,7 @@ export default function Header() {
     { name: "Projetos", href: "#projects" },
     { name: "Contato", href: "#contact" },
   ];
+  const [ isOpen, setIsOpen ] = useState(false)
 
   return (
     <motion.header 
@@ -27,6 +30,24 @@ export default function Header() {
             </li>
           ))}
         </ul>
+
+         <button
+          className={`${styles.menuHam} ${isOpen ? styles.active : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+
+          {/* Menu Mobile */}
+          <div className={`${styles.menuMobile} ${isOpen ? styles.menuMobileOpen : ""}`}>
+            <Link href="#about" className={styles.link} onClick={() => setIsOpen(false)}>Sobre</Link>
+            <Link href="#projects" className={styles.link} onClick={() => setIsOpen(false)}>Projetos</Link>
+            <Link href="#contact" className={styles.link} onClick={() => setIsOpen(false)}>Contato</Link>
+          </div>
+
       </nav>
     </motion.header>
   );
