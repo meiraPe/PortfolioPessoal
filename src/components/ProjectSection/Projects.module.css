@@ -1,5 +1,5 @@
 .projects {
-  min-height: 100vh;
+  min-height: none;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +11,7 @@
 .title {
   font-size: 2.2rem;
   color: var(--primary);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   text-align: center;
 }
 
@@ -72,6 +72,10 @@
 .imageWrapper:hover img {
   filter: blur(3px); 
   transform: scale(1.05);
+}
+
+.imageWrapper .icon {
+  font-size: 4rem;
 }
 
 .overlay {

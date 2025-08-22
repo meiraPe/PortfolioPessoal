@@ -9,7 +9,7 @@ const projects = [
     title: "Portfolio Website",
     desc: "Este projeto é meu portfólio pessoal, desenvolvido para apresentar meus projetos, habilidades e experiência de forma clara, moderna e interativa. Ele foi criado com foco em design minimalista e futurista, com destaque para tipografia monoespaçada, cores contrastantes e animações suaves que melhoram a experiência do usuário.",
     img: "/project1.png",
-    link: "https://github.com/seuusuario/portfolio"
+    link: "https://github.com/meiraPe/PortfolioPessoal"
   },
   {
     title: "E-commerce Project: 'Corre 012'",
@@ -52,9 +52,7 @@ export default function Projects() {
           <div className={styles.imageWrapper}>
             <img src={p.img} alt={p.title} />
               <div className={styles.overlay}>
-                <a href={p.link} target="_blank" rel="noopener noreferrer">
-                  <FaGithub />
-                </a>
+                <FaGithub className={styles.icon}/>
               </div>
           </div>
             <h3>{p.title}</h3>
