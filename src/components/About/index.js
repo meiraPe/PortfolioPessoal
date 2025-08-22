@@ -28,7 +28,7 @@ export default function About() {
         viewport={{ once: false, amount: 0.3 }}
       >
         <motion.div variants={item} className={styles.textBlock}>
-          <h2 className={styles.title}>Sobre Mim:</h2>
+          <h2 className={styles.title}>Sobre Mim</h2>
           <p className={styles.text}>
             Tenho 18 anos e sou apaixonado por tecnologia. Estou no último semestre de{" "}
             <span className={styles.highlight}>Técnico em Informática para Internet</span> no IFSP.
