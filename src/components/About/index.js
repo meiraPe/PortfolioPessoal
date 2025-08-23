@@ -31,7 +31,7 @@ export default function About() {
           <h2 className={styles.title}>Sobre Mim</h2>
           <p className={styles.text}>
             Tenho 18 anos e sou apaixonado por tecnologia. Estou no último semestre de{" "}
-            <span className={styles.highlight}>Técnico em Informática para Internet</span> no IFSP.
+            <span className={styles.highlight}>Técnico em Informática para Internet</span> no <span className={styles.highlight}>IFSP</span>.
             Atualmente busco oportunidades de estágio em vagas júnior com foco em desenvolvimento
             <span className={styles.highlight}> Frontend e Fullstack</span>. Estou sempre aberto a
             desafios e pronto para contribuir com minha criatividade e habilidades técnicas. Tenho
