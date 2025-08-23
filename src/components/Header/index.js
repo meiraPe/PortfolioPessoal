@@ -9,6 +9,7 @@ export default function Header() {
   const links = [
     { name: "Home", href: "#hero" },
     { name: "Sobre", href: "#about" },
+    { name: "Habilidades", href: "#skills" },
     { name: "Projetos", href: "#projects" },
     { name: "Contato", href: "#contact" },
   ];
@@ -21,8 +22,10 @@ export default function Header() {
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <div className={styles.logo}>Pedro<span>Meira</span></div>
+      <div className={styles.logo}>Pedro Meira<span>| Dev</span></div>
       <nav>
+
+      {/* Menu desktop */}
         <ul className={styles.nav}>
           {links.map((link) => (
             <li key={link.name}>
@@ -30,25 +33,38 @@ export default function Header() {
             </li>
           ))}
         </ul>
+      </nav>
 
-         <button
+        {/* Botão Hamburguer */}
+        <button
           className={`${styles.menuHam} ${isOpen ? styles.active : ""}`}
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
 
-          {/* Menu Mobile */}
-          <div className={`${styles.menuMobile} ${isOpen ? styles.menuMobileOpen : ""}`}>
-            <Link href="#about" className={styles.link} onClick={() => setIsOpen(false)}>Sobre</Link>
-            <Link href="#projects" className={styles.link} onClick={() => setIsOpen(false)}>Projetos</Link>
-            <Link href="#contact" className={styles.link} onClick={() => setIsOpen(false)}>Contato</Link>
-          </div>
+        {/* Menu Mobile */}
+        <div className={`${styles.menuMobile} ${isOpen ? styles.menuMobileOpen : ""}`}>
+          {links.map((link) => (
+            <Link 
+              key={link.name} 
+              href={link.href} 
+              className={styles.link} 
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </div>
 
-      </nav>
+        {/* Overlay */}
+        <div 
+          className={`${styles.overlay} ${isOpen ? styles.overlayOpen : ""}`} 
+          onClick={() => setIsOpen(false)} 
+        />
     </motion.header>
   );
 }

@@ -2,9 +2,9 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 115px;
-  background: rgba(11, 17, 32, 0.85);
+  width: 100%;  
+  height: 100px;
+  background: rgba(24, 24, 24, 0.85);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--accent);
   display: flex;
@@ -17,11 +17,12 @@
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: var(--primary);
+  color: var(--light);
 }
 
 .logo span {
-  color: var(--secondary);
+  color: var(--primary);
+  margin-left: 12px;
 }
 
 .nav {
@@ -63,13 +64,13 @@
 
 /* Esconde menu Desktop em telas pequenas */
 @media (max-width: 768px) {
-  .navbar {
+  .nav {
     display: none;
   }
 }
 
 /* Links */
-.link {
+.menuMobile .link {
   color: var(--light);
   text-decoration: none;
   font-weight: 500;
@@ -77,35 +78,35 @@
   transition: color 0.3s ease;
 }
 
-.link::after {
+.menuMobile .link::after {
   content: '';
   position: absolute;
   width: 0%;
   height: 2px;
   bottom: -2px;
   left: 0;
-  background-color: var(--tertiary);
+  background-color: var(--secondary);
   transition: width 0.3s ease;
 }
 
-.link:hover {
-  color: var(--tertiary);
+.menuMobile .link:hover {
+  color: var(--secondary);
 }
 
-.link:hover::after {
+.menuMobile .link:hover::after {
   width: 100%;
 }
 
 /* Hamburger */
 .menuHam {
   display: none;
-  width: 20px;
-  height: 16px;
+  width: 24px;
+  height: 20px;
   position: relative;
   cursor: pointer;
   background: none;
   border: none;
-  z-index: 60;
+  z-index: 1001;
 }
 
 @media (max-width: 768px) {
@@ -119,10 +120,10 @@
   display: block;
   height: 3px;
   width: 100%;
-  background: var(--light);
   border-radius: 2px;
   position: absolute;
   transition: all 0.4s ease;
+  background-color: var(--primary);
 }
 
 .menuHam span:nth-child(1) {
@@ -157,26 +158,45 @@
 .menuMobile {
   position: fixed;
   top: 0;
-  right: -100%;
+  right: 0;
   width: 60%;
   max-width: 300px;
   height: 100vh;
-  background-color: var(--primary);
+  background-color: var(--background);
   padding: 4rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  transition: right 0.4s ease;
+  transition: transform 0.4s ease;
+  transform: translateX(100%);  
   box-shadow: -2px 0 8px rgba(0,0,0,0.2);
-  z-index: 55;
+  z-index: 1000;
 }
 
 .menuMobileOpen {
-  right: 0;
+  transform: translateX(0);
 }
 
 .menuMobile .link {
   font-size: 1.2rem;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+}
+
+.overlayOpen {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /* Responsividade */
@@ -195,6 +215,6 @@
   }
 
   .logo {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 } 
