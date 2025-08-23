@@ -18,7 +18,7 @@ Um **portfolio pessoal** desenvolvido em **React** e **Next.js**, mostrando proj
 
 - Esse portfólio é responsivo e funciona em mobile, tablet e desktop.
 - A seção Projetos possui hover com link direto para repositórios no GitHub.
-- O formulário da seção Contato está implementado no front-end (em breve será integrado ao EmailJS / backend).
+- O formulário da seção Contato está integrado ao EmailJS.
 - O design foi inspirado em dark mode minimalista com cores baseadas em tons de azul e cinza.
 - Pretendo adicionar novas features como:
   . Envio automático do formulário por email
