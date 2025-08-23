@@ -29,10 +29,23 @@
   font-size: 1.2rem;
   color: var(--foreground);
   margin-top: 1rem;
+  line-height: 1.6;
 }
 
 .scrollIndicator {
   margin-top: 4rem;
   font-size: 1.5rem;
-  color: var(--accent);
+  color: var(--primary);
+}
+
+/* Responsividade */
+
+@media (max-width: 480px) {
+  .typing {
+    font-size: 1.8rem;
+  }
+
+  .p {
+    font-size: 0.95rem;
+  }
 }
